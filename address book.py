@@ -65,9 +65,12 @@ def open():
 
 def delete():
     index = book_display.curselection()
+    print(index)
     if index:
-        book_display.delete(index)
+        print(index)
         del address_book[book_display.get(index)]
+        book_display.delete(index)
+        print(address_book)
         clear_boxes()
     else:
         messagebox.showerror("no index","select a name")
@@ -104,7 +107,7 @@ name_label.grid(row=1,column=2)
 name_entry = Entry(root)
 name_entry.grid(row=1,column=3,padx=5)
 
-address_label = Label(root,text="Adress: ")
+address_label = Label(root,text="Address: ")
 address_label.grid(row=2,column=2)
 address_entry = Entry(root)
 address_entry.grid(row=2,column=3,padx=5)
