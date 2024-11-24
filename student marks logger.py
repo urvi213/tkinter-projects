@@ -54,10 +54,10 @@ def edit():
 def delete():
     index = display.curselection()
     if index:
+        del marks[display.get(index)]
         display.delete(index)
         print(display.get(index))
         print(marks)
-        del marks[display.get(index)]
         clear_boxes()
     else:
         messagebox.showerror("no index","select a name")
